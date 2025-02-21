@@ -1,0 +1,116 @@
+#ifndef OTT_OUT
+#define OTT_OUT
+
+#include <iostream>
+// #include <any>
+
+namespace ott {
+        
+    void brln()
+    {
+        std::cout << std::endl;
+    }
+
+    void br(int value)
+    {
+        for (int i; i <= value; i++)
+        {
+            std::cout << std::endl;
+        }
+    }
+
+
+    template <typename K>
+    void printen(K value)
+    {
+        std::cout << value << std::endl;
+    }
+
+
+    template <typename K, typename... Args>
+    void printen(K value, Args... args)
+    {
+        std::cout << value << std::endl ;
+        printen(args...);
+    }
+
+    template <typename V>
+    void print(V value)
+    {
+        std::cout << value;
+    }
+
+
+    template <typename V, typename... Args>
+    void print(V value, Args... args)
+    {
+        std::cout << value ;
+        print(args...);
+    }
+
+    template <typename T>
+    void println(T value)
+    {
+        std::cout << value << std::endl;
+    }
+
+
+    template <typename T, typename... Args>
+    void println(T value, Args... args)
+    {
+        std::cout << value << " ";
+        println(args...);
+    }
+
+    template <typename T>
+    void printrn(T value)
+    {
+        std::cout << value <<std::endl;
+    }
+
+
+    template <typename T, typename... Args>
+    void printrn(T value, Args... args)
+    {
+        std::cout << value << " ";
+        printrln(args...);
+    }
+
+    template <typename X>
+    X input(const std::string& prompt)
+    {
+        X value;
+        cout << prompt;
+        cin >> value;
+        return value;
+    }
+
+    std::string input(const std::string& prompt)
+    {
+        std::string value;
+        std::cout << prompt;
+        std::getline(std::cin, value);
+        return value;
+    }
+
+    void input(const std::string& prompt, std::string *var)
+    {
+        std::cout << prompt;
+        getline(std::cin, *var);
+    }
+
+    template <typename X>
+    void input(const std::string& prompt, X *var)
+    {
+        cout << prompt;
+        cin >> *var;
+    }
+
+
+
+}
+
+
+
+
+#endif

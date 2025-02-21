@@ -1,0 +1,114 @@
+#ifndef OTT_OUT
+#define OTT_OUT
+
+#include <iostream>
+// #include <any>
+using namespace std; 
+
+
+void brln()
+{
+    cout << endl;
+}
+
+void br(int value)
+{
+    for (int i; i <= value; i++)
+    {
+        cout << endl;
+    }
+}
+
+
+template <typename K>
+void printen(K value)
+{
+    cout << value << endl;
+}
+
+
+template <typename K, typename... Args>
+void printen(K value, Args... args)
+{
+    cout << value << endl ;
+    printen(args...);
+}
+
+template <typename V>
+void print(V value)
+{
+    cout << value;
+}
+
+
+template <typename V, typename... Args>
+void print(V value, Args... args)
+{
+    cout << value ;
+    print(args...);
+}
+
+template <typename T>
+void println(T value)
+{
+    cout << value << endl;
+}
+
+
+template <typename T, typename... Args>
+void println(T value, Args... args)
+{
+    cout << value << " ";
+    println(args...);
+}
+
+template <typename T>
+void printrn(T value)
+{
+    cout << value << endl;
+}
+
+
+template <typename T, typename... Args>
+void printrn(T value, Args... args)
+{
+    cout << value << " ";
+    printrln(args...);
+}
+
+template <typename X>
+X input(const string& prompt)
+{
+    X value;
+    cout << prompt;
+    cin >> value;
+    return value;
+}
+
+string input(const string& prompt)
+{
+    string value;
+    cout << prompt;
+    getline(cin, value);
+    return value;
+}
+
+void input(const string& prompt, string *var)
+{
+    cout << prompt;
+    getline(cin, *var);
+}
+
+template <typename X>
+void input(const string& prompt, X *var)
+{
+    cout << prompt;
+    cin >> *var;
+}
+
+
+
+
+
+
+#endif
