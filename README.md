@@ -1,4 +1,4 @@
-# ott-header-c-
+# ott-header-c++
 A C++ header
 ===================
 The C++ ott header is a C++ header created for programmers who are lazy about writing cout, endl, cin, etc. by using this header you can abbreviate std::cout, etc. with the functions in the header file. But if you are new or currently learning C++ then don't use this header because this header is made for people who already understand basic or advanced C++.
